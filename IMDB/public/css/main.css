@@ -1,0 +1,391 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+}
+
+body,
+input,
+button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+button {
+	cursor: pointer;
+}
+
+/* 			HEADER			 */
+
+header.header {
+	background-attachment: fixed;
+	background-image: url(../img/capa-madmax2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	height: 90vh;
+	width: 100%;
+	
+	padding: 20px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	position: relative;
+
+}
+
+.header::after {
+	content: '';
+
+	height: 100%;
+	width: 100%;
+
+	background: linear-gradient( 0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 212, 255, 0) 75% );
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.container {
+	margin: 0 auto;
+	width: 960px;
+	position: relative;
+}
+
+div.nav-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+div.nav-container ul.header-links {
+	display: flex;
+	align-items: center;
+
+	z-index: 2;
+}
+
+div.nav-container ul.header-links li {
+	margin: 0 25px;
+}
+
+a.link {
+	color: #fff;
+	font-size: 1.3em;
+	font-weight: bold;
+	text-transform: uppercase;
+	transition: all 0.2s ease-in-out;
+}
+
+.hover-color:hover {
+	color: #e4bb23 !important;
+}
+
+div.nav-container div.header-user {
+	display: flex;
+	align-items: center;
+}
+
+div.nav-container div.header-user img {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+}
+
+div.nav-container div.header-user span {
+	color: #fff;
+	font-size: 1.3em;
+	font-weight: bold;
+	margin-left: 15px;
+}
+
+div.header-content .container {
+	position: relative;
+	z-index: 2;
+}
+
+div.header-content h1.title {
+	color: #fff;
+
+	margin: 0;
+
+	font-size: 6.5em;
+	line-height: 1.2em;
+	text-transform: uppercase;
+}
+
+div.header-content .container .header-genre {
+	display: flex;
+	
+	margin: 15px 0 30px;
+
+	font-size: 1.3em;
+}
+
+div.header-content .container .header-genre a {
+	color: #fff;
+
+	margin-right: 15px;
+
+	text-transform: uppercase;
+	transition: all 0.2s ease-in-out;
+}
+
+div.header-content .container button.trailer {
+	padding: 15px 50px;
+
+	background: #e4bb23;
+
+	font-size: 1.5em;
+	border: 0;
+	border-radius: 25px;
+
+	position: relative;
+}
+
+div.header-content .container button.trailer i {
+	font-size: 1.5em;
+
+	position: absolute;
+	top: 13px;
+	right: 16px;
+}
+
+div.header-content .container .info {
+	color: #fff;
+	font-size: 1.4em;
+
+	padding: 20px 0;
+}
+
+div.header-content .container p + p {
+	color: #bc9a1d;
+}
+
+/* 			MAIN			 */
+
+main {
+	background-color: #f2f2f2;
+}
+
+/* 			MAIN FIGURE			 */
+
+main .catalog-nav ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin: 0 auto;
+	padding: 0 20px;
+	
+	height: 67px;
+	
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+main .catalog-nav ul li {
+	margin: 0 20px;
+}
+
+main .catalog-nav li a {
+	color: #e4bb23;
+
+	font-size: 1.3em;
+	font-weight: bold;
+	text-transform: uppercase;
+
+	padding: 25px 0;
+
+	transition: all 0.2s ease-in-out;
+}
+
+main .catalog-nav li a:hover {
+	box-shadow: inset 0 -1px 0 #e4bb23;
+}
+
+main section {
+	margin: 10px 0;
+	padding: 20px 0;
+}
+
+main .film-catalog {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 10px;
+}
+
+main .film-catalog li {
+	display: flex;
+	flex-direction: column;
+	
+	margin-bottom: 30px;
+	overflow: hidden;
+
+	border-radius: 8px;
+}
+
+main .film-catalog li figure {
+	margin: 0;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+main .film-catalog li figure img {
+	width: 100%;
+  height: auto;
+}
+
+main .film-catalog li figure div.film-hover {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	height: 100%;
+	width: 100%;
+	padding: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+
+	opacity: 0;
+	visibility: hidden;
+
+	transition: all 0.2s ease-in-out;
+}
+
+main .film-catalog li figure div.film-hover h2 {
+	color: #e4bb23;
+	font-size: 2em;
+	line-height: 1em;
+	text-transform: uppercase; 
+}
+
+main .film-catalog li figure div.film-hover a {
+	color: #fff;
+	font-size: 5em;
+  transition: all 0.2s ease-in-out;
+}
+
+main .film-catalog li figure div.film-hover a:hover {
+	color: #e4bb23;
+}
+
+main .film-catalog li:hover .film-hover {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* 			MAIN SUMMARY			 */
+
+main section div.film-summary {
+	padding: 10px;
+	width: 100%;
+}
+
+main section .film-summary .summary-title {
+	font-size: 1.3em;
+	font-weight: bold;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+main section .film-summary ul {
+	display: flex;
+	margin: 10px 0;
+}
+
+main section .film-summary ul li a {
+	color: #e4bb23;
+	font-size: 1.2em;
+}
+
+main section .film-summary ul li a:hover {
+	text-decoration: underline;
+}
+
+main section .film-summary div {
+	display: flex;
+	justify-content: space-between;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+main section .film-summary div i {
+	color: #ccc;
+}
+
+main section .film-summary div i:hover {
+	color: #e74c3c;
+}
+
+main section .film-summary div span {
+	color: #000;
+}
+
+/* 			FOOTER			 */
+
+footer {
+	padding: 20px 0;
+}
+
+footer div.container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+footer ul.footer-list {
+	display: flex;
+}
+
+footer ul.footer-list li {
+	margin: 0 20px;
+}
+
+footer ul.footer-list li:last-child {
+	margin-right: 0;
+}
+
+footer ul.footer-list li a {
+	color: #bababa;
+	font-size: 2.5em;
+}
+
+footer ul.footer-list li:nth-child(1):hover a {
+	color: #55acee;
+}
+footer ul.footer-list li:nth-child(2):hover a {
+	color: #3b5998;
+}
+footer ul.footer-list li:nth-child(3):hover a {
+	color: #e95950;
+}
