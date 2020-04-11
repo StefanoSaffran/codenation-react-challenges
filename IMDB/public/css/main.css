@@ -5,6 +5,15 @@
 	box-sizing: border-box;
 }
 
+html {
+	--bg: #FCFCFC;
+	--bg-panel: #EBEBEB;
+	--color-headings: #0077FF;
+	--color-title: "#121212",
+	--color-text: #333333;
+	--image: url(../img/capa-madmax2.jpg);
+}
+
 html, body {
 	height: 100%;
 }
@@ -18,7 +27,8 @@ body,
 input,
 button {
   font-family: "Montserrat", sans-serif;
-  font-size: 10px;
+	font-size: 10px;
+	background: var(--bg);
 }
 
 a {
@@ -48,7 +58,7 @@ header.header {
 	background-image: url(../img/capa-madmax2.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center center;
+	background-position: initial;
 
 	height: 90vh;
 	width: 100%;
@@ -107,6 +117,52 @@ a.link {
 div.nav-container div.header-user {
 	display: flex;
 	align-items: center;
+}
+
+div.nav-container div.header-user .toggle {
+	margin-right: 10px;
+}
+
+div.nav-container div.header-user input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+div.nav-container div.header-user label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 52px;
+	height: 27px;
+	background: grey;
+	float: right;
+	border-radius: 100px;
+	position: relative;
+}
+
+div.nav-container div.header-user label::after{
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 20px;
+	height: 20px;
+	background-color: white;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+div.nav-container div.header-user input:checked + label {
+	background-color: var(--color-headings);
+}
+
+div.nav-container div.header-user input:checked + label::after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+div.nav-container div.header-user label:active:after {
+	width: 45px;
 }
 
 div.nav-container div.header-user img {
@@ -196,7 +252,7 @@ div.header-content .container p + p {
 /* 			MAIN			 */
 
 main {
-	background-color: #f2f2f2;
+	background-color: var(--bg);
 }
 
 /* 			MAIN NAV			 */
@@ -319,6 +375,7 @@ main .film-catalog li:hover .film-hover {
 main section div.film-summary {
 	padding: 10px;
 	width: 100%;
+	background: var(--bg-panel);
 }
 
 main section .film-summary .summary-title {
@@ -326,6 +383,7 @@ main section .film-summary .summary-title {
 	font-weight: bold;
 	margin: 0;
 	text-transform: uppercase;
+	color: var(--color-title);
 }
 
 main section .film-summary ul {
@@ -358,7 +416,7 @@ main section .film-summary div i:hover {
 }
 
 main section .film-summary div span {
-	color: #000;
+	color: var(--color-text);
 }
 
 /* 			FOOTER			 */
