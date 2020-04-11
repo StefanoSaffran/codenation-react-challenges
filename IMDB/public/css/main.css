@@ -58,7 +58,7 @@ header.header {
 	background-image: url(../img/capa-madmax2.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: initial;
+	background-position: center center;
 
 	height: 90vh;
 	width: 100%;
