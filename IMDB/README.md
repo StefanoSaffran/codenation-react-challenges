@@ -19,7 +19,7 @@
 > 👉 [IMDB Codenation](https://codenation-react-imdb.netlify.com/)
 
 <p align="center">
-  <img src="https://res.cloudinary.com/stefanosaffran/image/upload/v1586864434/Codenation/qlu9jgypzpp1fkfbvxr7.gif" >
+  <img src="https://res.cloudinary.com/stefanosaffran/image/upload/v1586866357/Codenation/huljzb3yriwc9e92jet6.gif" >
 </p>
 
 ## :mailbox_with_mail: Get in touch!
