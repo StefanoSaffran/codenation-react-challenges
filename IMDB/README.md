@@ -16,7 +16,7 @@
  The home page of a movie review site IMDB - Internet Movies Database - using only **HTML5** e **CSS3**
 
 > **Preview:**
-> 👉 [Instagram Codenation](https://codenation-react-imdb.netlify.com/)
+> 👉 [IMDB Codenation](https://codenation-react-imdb.netlify.com/)
 
 <p align="center">
   <img src="https://res.cloudinary.com/stefanosaffran/image/upload/v1586864434/Codenation/qlu9jgypzpp1fkfbvxr7.gif" >

@@ -16,7 +16,7 @@
 Mobile first version of instagram using only **HTML5** e **CSS3** and following BEM - Block Element Modifier - methodology.
 
 > **Preview:**
-> 👉 [IMDB Codenation](https://codenation-instagram.netlify.com/)
+> 👉 [Instagram Codenation](https://codenation-instagram.netlify.com/)
 
 <p align="center">
   <img src="https://res.cloudinary.com/stefanosaffran/image/upload/v1586860575/Codenation/g9y9vsrup7jwmyd8t7n7.gif" >
