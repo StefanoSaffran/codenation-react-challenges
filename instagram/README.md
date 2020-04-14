@@ -19,7 +19,7 @@ Mobile first version of instagram using only **HTML5** e **CSS3** and following 
 > 👉 [Instagram Codenation](https://codenation-instagram.netlify.com/)
 
 <p align="center">
-  <img src="https://res.cloudinary.com/stefanosaffran/image/upload/v1586860575/Codenation/g9y9vsrup7jwmyd8t7n7.gif" >
+  <img src="https://res.cloudinary.com/stefanosaffran/image/upload/v1586866075/Codenation/p4uutjyxl2vomnrfw7xp.gif" >
 </p>
 
 ## :mailbox_with_mail: Get in touch!
