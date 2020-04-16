@@ -130,6 +130,8 @@ figure {
 	width: 100%;
 	margin-top: 56px;
 	padding: 16px 0;
+
+	overflow-x: auto;
 }
 
 .stories .user__image {
@@ -138,7 +140,7 @@ figure {
 	margin: 0 8px;
 	justify-content: center;
 	align-items: center;
-	
+	min-width: 70px;
 }
 
 .stories__item--new {
