@@ -108,10 +108,14 @@ figure {
 	height: 22px;
 }
 
+.header .user__image img {
+	height: 24px;
+}
+
 .header__icon {
 	font-size: 2em;
-	width: 22px;
-	height: 22px;
+	width: 24px;
+	height: 24px;
 }
 
 /*				STORIES				*/
