@@ -18,8 +18,9 @@
 The application contains two methods.
 
 1. **fibonacci**: Returns an Array with Fibonacci numbers less than 350.
+    - > 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233
 
-2. **isFibonnaci**: takes a Number as a parameter and returns "true" if the number received is between the Fibonacci numbers from the first method **fibonacci**, otherwise, it returns "false".
+2. **isFibonnaci**: Takes a number as a parameter and returns **true** if the number received is between the Fibonacci numbers from the first method **fibonacci**, otherwise, it returns **false**.
 
 ## :mailbox_with_mail: Get in touch!
 
