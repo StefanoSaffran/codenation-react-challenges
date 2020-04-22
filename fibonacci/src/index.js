@@ -12,10 +12,7 @@ const fibonacci = () => {
   return fibonacciArray;
 }
 
-const isFibonnaci = num => 
-  num === 0
-    ? true
-    : !!fibonacci().find(fibonacciNum => fibonacciNum === num)
+const isFibonnaci = num => fibonacci().includes(num)
 
 module.exports = {
   fibonacci,
