@@ -23,7 +23,7 @@ divided into **4 categories**:
 -  **`SHOES`**
 -  **`BAGS`**
 
-the `objet` of each product has a **standard price** that can be identified in the property `regularPrice`, as well as a list **promotional prices** identified in the property `promotions`.
+the `objetc` of each product has a **standard price** that can be identified in the property `regularPrice`, as well as a list **promotional prices** identified in the property `promotions`.
 
 The **final price** of the cart will be calculated according to the **combination of categories** of the added products.
 
@@ -35,7 +35,6 @@ Cart promotions will be calculated according to the following combinations of lo
 
 > If the combination of products added to the cart corresponds to any of the conditions above, the value of the products that will be calculated will be the corresponding one in the property **`looks`**.
 
-123/5000
 Given the entry of an **Array** with the product ids, an `object` containing the following properties must be returned:
 
 - The names of the products and their respective categories.
