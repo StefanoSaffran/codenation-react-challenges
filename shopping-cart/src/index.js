@@ -1,64 +1,59 @@
 const promotions = ['SINGLE LOOK', 'DOUBLE LOOK', 'TRIPLE LOOK', 'FULL LOOK'];
 
-function getPromotion(products) {
-	const category = [];
 
-	products.forEach(product => {
-		if (!category.includes(product.category)) category.push(product.category)
-	})
+const getPromotion = products => promotions[[...new Set(products.map(product => product.category))].length - 1];
 
-	return promotions[category.length - 1];
-}
+const getCartProducts = (ids, productsList) => productsList.filter(product => ids.includes(product.id));
 
-function getProductDetails(promotion, products) {
-	let { totalPrice, totalRegularPrice } = products.reduce((productDetails, nextProduct) => {
-		const productPromotionPrice = nextProduct.promotions.filter(promo => promo.looks.includes(promotion));
-
-		if( productPromotionPrice[0]) {
-			productDetails.totalPrice += productPromotionPrice[0].price;
-		} else {
-			productDetails.totalPrice += nextProduct.regularPrice;
-		}
-
-		productDetails.totalRegularPrice += nextProduct.regularPrice;
-
-		return productDetails;
-	}, {
-		totalPrice: 0,
-		totalRegularPrice: 0,
-	})
-
-	const optionsPercentage = {
+const getDiscount = (regularPrice, totalPrice) => 
+	Intl.NumberFormat('pt-BR', {
 		style: 'percent',
 		minimumFractionDigits: 2,
 		maximumFractionDigits: 2
-	}
+	}).format(1 - totalPrice / regularPrice);
 
-	const discount = Intl.NumberFormat('pt-BR', optionsPercentage).format(1 - totalPrice / totalRegularPrice);
-	const discountValue = (totalRegularPrice - totalPrice).toFixed(2);
-	totalPrice = Intl.NumberFormat().format(totalPrice);
-	
-	return {
-		totalPrice,
-		discountValue,
-		discount
-	}
-}
+const getTotalPriceWithoutDiscount = products =>
+	products
+		.map(product => product.regularPrice)
+		.reduce((sum, next) => sum + next, 0);
 
-function getShoppingCart(ids, productsList) {
 
-	const filteredProducts = productsList.filter(product => {
-		return ids.includes(product.id)
-	})
+const getTotalPrice = (promotion, products) => 
+	products.reduce((totalPrice, nextProduct) => {
+		const PromotionPrice = nextProduct.promotions.filter(promo => promo.looks.includes(promotion));
 
-	const promotion = getPromotion(filteredProducts)
+		if(PromotionPrice[0]) {
+			totalPrice += PromotionPrice[0].price;
+		} else {
+			totalPrice += nextProduct.regularPrice;
+		}
 
-	const { totalPrice, discountValue, discount } = getProductDetails(promotion, filteredProducts);
+		return totalPrice;
+	}, 0)
 
-	const products = filteredProducts.map(product => ({
+const mapProductToNameAndCategory = products =>
+	products.map(product => ({
 		name: product.name,
 		category: product.category,
 	}))
+
+const getShoppingCart = (ids, productsList) => {
+
+	const cartProducts = getCartProducts(ids, productsList);
+
+	const promotion = getPromotion(cartProducts);
+
+	const discount = getDiscount(getTotalPriceWithoutDiscount(cartProducts), getTotalPrice(promotion, cartProducts));
+
+	const discountValue = (
+		getTotalPriceWithoutDiscount(cartProducts) - getTotalPrice(promotion, cartProducts)
+	).toFixed(2);
+	
+	const totalPrice = Intl.NumberFormat().format(getTotalPrice(promotion, cartProducts));
+
+	const products = mapProductToNameAndCategory(cartProducts);
+
+	console.log(promotion, discount, discountValue, totalPrice, products);
 
 	return {
 		products,
