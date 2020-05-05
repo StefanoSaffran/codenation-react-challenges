@@ -28,6 +28,7 @@ The challenge was to develop a *SPA (single page application)* from a list of co
 GET: *https://5e82ac6c78337f00160ae496.mockapi.io/api/v1/contacts*
 
 > **Try it out:**
+> 👉 [Contacts App](https://contacts-codenation-react.netlify.app/)
 
 <p align="center">
   <img src="https://res.cloudinary.com/stefanosaffran/image/upload/v1588670110/Codenation/z33ug3l3ewq6spkt1ih4.gif" >
