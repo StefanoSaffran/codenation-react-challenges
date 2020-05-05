@@ -17,7 +17,7 @@
 
 ## :computer: Project 
 
-The challenge was to develop a *SPA (single page application)* from a list of contacts in **React** with the following functonalities:
+The challenge was to develop a *SPA (single page application)* in **React** using classes from a contact list with the following features:
 
 -  Consume contacts data through a Rest API, using the Javascript * Fetch API *.
 -  Search for a contact by applying **real-time filter**.
