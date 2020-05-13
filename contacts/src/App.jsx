@@ -31,19 +31,22 @@ class App extends React.Component {
     })
   }
 
-  handleSort = key => {
+  handleSort = (key, order) => {
     const { contacts } = this.state;
 
     this.setState({
-      contacts: this.sortByKey(contacts, key)
+      contacts: this.sortByKey(contacts, key, order)
     })
   }
 
-  sortByKey = (contacts, key) => {
+  sortByKey = (contacts, key, order) => {
     return contacts.sort((a, b) => {
       const x = b[key];
       const y = a[key];
-      return x < y ? 1 : x > y ? -1 : 0;
+      if(order === 'asc')
+        return x < y ? 1 : x > y ? -1 : 0;
+
+      return x < y ? -1 : x > y ? 1 : 0;
     });
   };
 

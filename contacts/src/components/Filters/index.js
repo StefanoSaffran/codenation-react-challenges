@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Button from '../Button';
+
 import { Container } from './styles';
 
 class Filters extends React.Component {
@@ -7,17 +9,39 @@ class Filters extends React.Component {
 		super();
 		this.state = {
 			selected: '',
+			sorted: '',
 		}
 	}
 
-	handleClick = buttonName => {
-		const { selected } = this.state;
+	handleClick = label => {
+		const { selected, sorted } = this.state;
+
+		let order = "asc";
+    if (selected === label) {
+      order = sorted === "desc" ? "asc" : "desc";
+    }
 		
 		this.setState({
-			selected: selected !== buttonName ? buttonName : '',
-		})
-		this.props.handleSort(buttonName)
+      selected: label,
+      sorted: order,
+    });
+		this.props.handleSort(label, order)
 	}
+
+	isSelected(option) {
+    return option === this.state.selected
+      ? "filters__item is-selected"
+      : "filters__item";
+  }
+
+  isSort(option) {
+    let icon = "fas fa-sort-down";
+    if (option === this.state.selected) {
+      icon =
+        this.state.sorted === "asc" ? "fas fa-sort-down" : "fas fa-sort-up";
+    }
+    return icon;
+  }
 
 	render() {
 		const { selected } = this.state;
@@ -37,35 +61,36 @@ class Filters extends React.Component {
 						</button>
 					</div>
 
-					<button 
-						onClick={() => this.handleClick('name')} 
-						className={`filters__item ${selected === 'name' && `is-selected`}`}>
-							Nome <i className={`fas ${selected === 'name' ? 'fa-sort-up' : 'fa-sort-down' }`} />
-					</button>
-
-					<button 
-						onClick={() => this.handleClick('country')} 
-						className={`filters__item ${selected === 'country' && `is-selected`}`}>
-							País <i className={`fas ${selected === 'country' ? 'fa-sort-up' : 'fa-sort-down' }`} />
-					</button>
-
-					<button 
-						onClick={() => this.handleClick('company')} 
-						className={`filters__item ${selected === 'company' && `is-selected`}`}>
-							Empresa <i className={`fas ${selected === 'company' ? 'fa-sort-up' : 'fa-sort-down' }`} />
-					</button>
-
-					<button 
-						onClick={() => this.handleClick('department')} 
-						className={`filters__item ${selected === 'department' && `is-selected`}`}>
-							Departamento <i className={`fas ${selected === 'department' ? 'fa-sort-up' : 'fa-sort-down' }`} />
-					</button>
-
-					<button 
-						onClick={() => this.handleClick('admissionDate')} 
-						className={`filters__item ${selected === 'admissionDate' && `is-selected`}`}>
-							Data de admissão <i className={`fas ${selected === 'admissionDate' ? 'fa-sort-up' : 'fa-sort-down' }`} />
-					</button>
+					<Button
+            content="Nome"
+            className={this.isSelected("name")}
+            classIcon={this.isSort("name")}
+						handleOnClick={() => this.handleClick("name")}
+          />
+          <Button
+            content="País"
+            className={this.isSelected("country")}
+            classIcon={this.isSort("country")}
+            handleOnClick={() => this.handleClick("country")}
+          />
+          <Button
+            content="Empresa"
+            className={this.isSelected("company")}
+            classIcon={this.isSort("company")}
+            handleOnClick={() => this.handleClick("company")}
+          />
+          <Button
+            content="Departamento"
+            className={this.isSelected("department")}
+            classIcon={this.isSort("department")}
+            handleOnClick={() => this.handleClick("department")}
+          />
+          <Button
+            content="Data de admissão"
+            className={this.isSelected("admissionDate")}
+            classIcon={this.isSort("admissionDate")}
+            handleOnClick={() => this.handleClick('admissionDate')}
+          />
 				</section>
       </Container>
     );
