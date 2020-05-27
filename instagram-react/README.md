@@ -16,7 +16,7 @@
 Mobile first version of instagram using **React**.
 
 > **See on Netlify:**
-> 👉 [Instagram](https://codenation-instagram.netlify.com/)
+> 👉 [Instagram](https://instagram-react-codenation.netlify.app/)
 
 <p align="center">
   <img src="https://res.cloudinary.com/stefanosaffran/image/upload/v1590594847/Codenation/tvledo6kdtvm2xq3plqx.gif" >
