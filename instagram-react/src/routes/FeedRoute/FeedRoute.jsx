@@ -5,6 +5,8 @@ import Loading from '../../components/Loading';
 
 import Posts from '../../containers/Posts';
 
+import api from '../../services/api';
+
 import './FeedRoute.scss';
 
 const FeedRoute = () => {
@@ -18,12 +20,12 @@ const FeedRoute = () => {
   useEffect(() => {
     const loadUsers = async () => {
       try {
-        const response = await fetch('https://5e7d0266a917d70016684219.mockapi.io/api/v1/users')
+        const response = await fetch(`${api}/users`)
         const data = await response.json()
         setUsers(data)
       } catch (error) {
         
-      }
+      } 
     }
   loadUsers();
   }, []);
@@ -33,7 +35,7 @@ const FeedRoute = () => {
       if (users.length) {
         try {
           for (const user of users) {
-            const response = await fetch(`https://5e7d0266a917d70016684219.mockapi.io/api/v1/users/${user.id}/posts`)
+            const response = await fetch(`${api}/users/${user.id}/posts`)
             const data = await response.json()
             if (data.length) {
               setPosts(oldPosts => ([...oldPosts, ...data]));
@@ -41,9 +43,7 @@ const FeedRoute = () => {
           }
         } catch (error) {
         
-        } finally {
-          setLoading(false)
-        }
+        } 
       }
     }
     loadPosts();
@@ -52,12 +52,14 @@ const FeedRoute = () => {
   useEffect(() => {
     const loadStories = async () => {
       try {
-        const response = await fetch('https://5e7d0266a917d70016684219.mockapi.io/api/v1/stories')
+        const response = await fetch(`${api}/stories`)
         setStories(await response.json())
         
       } catch (error) {
         
-      } 
+      } finally {
+        setLoading(false)
+      }
     }
   
     loadStories();

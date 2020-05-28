@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import SuccessMessage from '../../components/SuccessMessage';
 
+import api from '../../services/api';
+
 import './UserForm.scss';
 
 const UserForm = (
@@ -24,7 +26,7 @@ const UserForm = (
       }
 
       try {           
-        await fetch('https://5e7d0266a917d70016684219.mockapi.io/api/v1/users', {
+        await fetch(`${api}/users`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

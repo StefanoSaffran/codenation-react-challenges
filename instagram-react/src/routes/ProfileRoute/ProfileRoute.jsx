@@ -6,6 +6,8 @@ import UserPosts from '../../containers/UserPosts';
 
 import Loading from '../../components/Loading';
 
+import api from '../../services/api';
+
 const ProfileRoute = () => {
   const { username } = useParams();
   const [user, setUser] = useState(null);
@@ -14,7 +16,7 @@ const ProfileRoute = () => {
   useEffect(() => {
     const loadUser = async () => {
       try {
-        const response = await fetch(`https://5e7d0266a917d70016684219.mockapi.io/api/v1/users?search=${username}`)
+        const response = await fetch(`${api}/users?search=${username}`)
         const data = await response.json();
         setUser(data[0])
         
@@ -29,9 +31,8 @@ const ProfileRoute = () => {
     if (user?.id) {
       const loadPosts = async () => {
         try {
-          const response = await fetch(`	https://5e7d0266a917d70016684219.mockapi.io/api/v1/users/${user.id}/posts`)
+          const response = await fetch(`${api}/users/${user.id}/posts`)
           const data = await response.json();
-          console.log(data);
           setPosts(data)
           
         } catch (err){

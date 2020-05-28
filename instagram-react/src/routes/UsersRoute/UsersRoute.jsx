@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 
 import UsersList from '../../containers/UsersList/UsersList';
 
+import api from '../../services/api';
+
 const UsersRoute = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
     const loadUsers = async () => {
-      const response = await fetch('https://5e7d0266a917d70016684219.mockapi.io/api/v1/users');
+      const response = await fetch(`${api}/users`);
       const data = await response.json();
       setUsers(data)
     }
